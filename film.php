@@ -40,7 +40,7 @@
 
     <!-- section : html  + js -->
     <section>
-      <h2>Bienvenue sur le Bedflix de Tyrfing</h2>
+      <h2>Bienvenue sur le Bedflix de Tyrfing section films!</h2>
       <div class="container maxWH d-flex flex-nowrap meme">
         <img class="maxWH" src="" alt="" id="meme" />
         <h3 id="title"></h3>

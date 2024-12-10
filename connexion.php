@@ -1,15 +1,7 @@
 <?php
     // On inclut notre connecteur à la base de données
     include('./connect.php');
-    if(empty($_SESSION["user"])) {        
-        // Permet de détruire la session PHP courante ainsi que toutes les données rattachées
-              session_destroy();
-              header("Location: connexion.php");
-        }
-      
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,27 +31,51 @@
     <!-- header end --------  -->
 
     <!-- section : html  + js -->
-    <section>
-      <h2>Bienvenue sur le Bedflix de Tyrfing</h2>
-      <div class="container maxWH d-flex flex-nowrap meme">
-        <img class="maxWH" src="" alt="" id="meme" />
-        <h3 id="title"></h3>
-        <button id="memeBTN">Get Meme</button>
-      </div>
+    <section class="maxW">
+    <div class="maxW">
+        <h2>Connexion</h2>
+        <form class="myform form" action="connexion.php" method="POST">
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" id="pseudo" name="pseudo" required>
+            <br>
+            <label for="mot_de_passe">Mot de passe :</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+            <br>
+            <button type="submit">Se connecter</button>
+        </form>
+        <?php
+        
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Récupérer les données du formulaire
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $mot_de_passe = $_POST['mot_de_passe'];
+
+    // Vérifier les identifiants
+    $stmt = $db->prepare("SELECT * FROM UTILISATEURS WHERE pseudo_utilisateur = :pseudo");
+    $stmt->execute([':pseudo' => $pseudo]);
+    $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (password_verify($mot_de_passe, $utilisateur['mot_de_passe_utilisateur'])) {
+        $_SESSION['user'] = $utilisateur['pseudo_utilisateur'];
+        header("Location: index.php");
+    } else {
+        echo "Pseudo ou mot de passe incorrect.";
+        unset($_SESSION['user']);
+    }
+}
+?>
+
+    </div>
     </section>
+
     <!-- section end -------- -->
-    <form id="returnBTN" action="deco.php">
-      <button type="submit" name="exohub" class="btn-secondary" value="1">
-        Se déconnecter
-      </button>
-    </form>
 
     <!-- footer : see main.js -->
     <footer></footer>
     <!-- footer : see main.js -->
 
     <script type="module" src="./main.js"></script>
-    <script type="module" src="./meme.js"></script>
     <script type="module" src="./footer.js"></script>
     <script type="module" src="./zenquote.js"></script>
   </body>
