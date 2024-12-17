@@ -1,7 +1,6 @@
-document.querySelector("#app").innerHTML = `
-      <nav class="navbar navbar-expand-lg d-flex flex-row">
+<nav class="navbar navbar-expand-lg d-flex flex-row">
         <div class="container-fluid" id="header1">
-          <a class="navbar-brand pc" href="./"
+          <a class="navbar-brand pc" href="./index"
             ><img id="logo" src="./src/winkporing.png" alt="logo"
           /></a>
         </div>
@@ -41,5 +40,4 @@ document.querySelector("#app").innerHTML = `
             </ul>
           </div>
         </div>
-      </nav>
-`;
+</nav>

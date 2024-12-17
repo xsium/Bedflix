@@ -112,6 +112,7 @@ h1 {
 /*------------ section css start ------------*/
 section{
   width: 100%;
+  justify-content: center !important;
 
 }
 section>div{
@@ -193,8 +194,9 @@ form{
 }
 
 /*------------ TodoList css start ------------*/
-.myform{
-  width: 70%;
+.monform{
+  width: 95%;
+  min-width: 300px;
   margin: 0 auto;
 }
 .mylist{
