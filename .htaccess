@@ -1,5 +1,10 @@
 RewriteEngine On
 RewriteBase /Bedflix/
+
+# Allow WebSocket connections (adjust the path if needed)
+RewriteCond %{REQUEST_URI} ^/Bedflix/ws [NC]
+RewriteRule .* - [L]
+
 RewriteRule ^index\\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
