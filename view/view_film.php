@@ -22,7 +22,7 @@
     <title>Bedflix Project</title>
   </head>
   <body>
-    <!-- header : see main.js -->
+    <!-- header :  ---------  -->
     <header id="app">
         <?php include('./view/header.php');?>
     </header>
@@ -44,15 +44,13 @@
           </button>
     </form>
 
-    <!-- footer : see main.js -->
+    <!-- footer :  -->
     <footer>
         <?php include('./view/footer.php');?>
     </footer>
-    <!-- footer : see main.js -->
+    <!-- footer :  -->
 
-    <!--<script type="module" src="./main.js"></script>-->
     <script type="module" src="./meme.js"></script>
-    <!--<script type="module" src="./footer.js"></script>-->
     <script type="module" src="./zenquote.js"></script>
   </body>
 </html>

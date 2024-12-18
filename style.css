@@ -209,3 +209,46 @@ form{
 h2,h3{
   text-align: center;
 }
+
+/*------------css chat ------------*/
+#chat-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#chat-messages {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+#message-form {
+  display: flex;
+  gap: 10px;
+}
+#message-input {
+  flex: 1;
+  padding: 5px;
+  width: 465px;
+}
+.message {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  word-break:break-all;
+}
+.message p{
+  word-break:break-all;
+  white-space: pre-wrap;
+}
+.received {
+  background-color: #9bc1e7;
+  color: black;
+}
+.sent {
+  background-color: #d4edda;
+  text-align: right;
+  color: black;
+}

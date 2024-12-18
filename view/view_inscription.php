@@ -22,7 +22,7 @@
     <title>Bedflix Project</title>
   </head>
   <body>
-    <!-- header : see main.js -->
+    <!-- header : ----------- -->
     <header id="app">
         <?php include('./view/header.php');?>
     </header>
@@ -55,21 +55,21 @@
             </form>
         </div>
     </section>
+    <?php if(!empty($_SESSION["user"])) { ?>
     <form id="returnBTN" action="./deco" method="POST">
           <button type="submit" name="deco" class="btn-secondary" value="1">
             Se déconnecter
           </button>
         </form>
+        <?php } ?>cd
     <!-- section end -------- -->
 
-    <!-- footer : see main.js -->
+    <!-- footer :  -->
     <footer>
         <?php include('./view/footer.php');?>
     </footer>
-    <!-- footer : see main.js -->
+    <!-- footer :  -->
 
-    <!--<script type="module" src="./main.js"></script>-->
-    <!--<script type="module" src="./footer.js"></script>-->
     <script type="module" src="./zenquote.js"></script>
   </body>
 </html>

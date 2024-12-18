@@ -31,8 +31,8 @@
     <!-- section : html  + js -->
     <section class="d-flex justify-content-center">
     <div>
+    <?php if(empty($_SESSION["user"])) { ?>
         <h2>Connexion</h2>
-        <?php if(empty($_SESSION["user"])) { ?>
         <form class="monform" action="/Bedflix/connexion" method="POST">
             <label for="pseudo">Pseudo :</label>
             <input type="text" id="pseudo" name="pseudo" size="30" required>
@@ -43,6 +43,7 @@
             <button type="submit">Se connecter</button>
         </form>
         <?php } else{ ?>
+          <h2>Déconnexion</h2>
           <form id="returnBTN" action="./deco" method="POST">
           <button type="submit" name="deco" class="btn-secondary" value="1">
             Se déconnecter
@@ -54,14 +55,11 @@
 
     <!-- section end -------- -->
 
-    <!-- footer : see main.js -->
+    <!-- footer :  -->
     <footer>
         <?php include('./view/footer.php');?>
     </footer>
-    <!-- footer : see main.js -->
-
-    <!--<script type="module" src="./main.js"></script>-->
-    <!--<script type="module" src="./footer.js"></script>-->
+    <!-- footer :  -->
     <script type="module" src="./zenquote.js"></script>
   </body>
 </html>

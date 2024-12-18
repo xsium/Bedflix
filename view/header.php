@@ -32,10 +32,17 @@
                 <a class="nav-link" href="./serie">Séries</a>
               </li>
               <li class="nav-item">
+              <?php if(empty($_SESSION["user"])) { ?>
                 <a class="nav-link" href="./connexion">Se connecter</a>
+                <?php } else{ ?>
+                <a class="nav-link" href="./connexion">Se Déconnecter</a>
+                <?php } ?>
               </li>
 			  <li class="nav-item">
                 <a class="nav-link" href="./inscription">S'inscrire</a>
+              </li>
+			  <li class="nav-item">
+                <a class="nav-link" href="./chat">Chat</a>
               </li>
             </ul>
           </div>

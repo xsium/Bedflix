@@ -26,5 +26,8 @@ else if ($requestUri =="/Bedflix/connexion.php"){
 else if ($requestUri =="/Bedflix/deco"){
     require 'model/deco.php';
 }
+else if ($requestUri =="/Bedflix/chat"){
+    require 'control/chat_controller.php';
+}
 
 ?>

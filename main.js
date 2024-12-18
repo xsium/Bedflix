@@ -1,45 +1,13 @@
-document.querySelector("#app").innerHTML = `
-      <nav class="navbar navbar-expand-lg d-flex flex-row">
-        <div class="container-fluid" id="header1">
-          <a class="navbar-brand pc" href="./"
-            ><img id="logo" src="./src/winkporing.png" alt="logo"
-          /></a>
-        </div>
-        <div class="container-fluid d-flex flex-column" id="header2">
-          <h1>Tyrfing's BedFlix</h1>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon" id="spanheader"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse customnav"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="./index">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./film">Films</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./serie">Séries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./connexion">Se connecter</a>
-              </li>
-			  <li class="nav-item">
-                <a class="nav-link" href="./inscription">S'inscrire</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-`;
+const form = document.getElementById("message-form");
+const textarea = document.getElementById("message-input");
+
+textarea.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && event.shiftKey == true) {
+    // Add a new line
+    console.log("new line");
+  } else if (event.key === "Enter" && textarea.value.length > 0) {
+    // Submit the form
+    form.requestSubmit();
+    event.preventDefault(); // Prevent default form behavior
+  }
+});
