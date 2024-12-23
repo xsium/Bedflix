@@ -1,4 +1,5 @@
 <?php
+//Maison.php
 class Maison{
     protected $name;
     protected $length;
@@ -38,6 +39,7 @@ class Maison{
         echo ("<p>La surface de nomMaison est égale à: $result m²</p>");
     }
 }
+//Utilisateur.php
 class Utilisateur{
     private static $counter;
     private $id;
@@ -70,6 +72,7 @@ class Utilisateur{
 
 
 }
+//Animal.php
 class Animal{
     private $counter;
     private $id;
@@ -92,6 +95,7 @@ class Animal{
         return $this->id;
     }
 }
+//Salle.php
 class Salle{
     private $counter;
     private $id;
@@ -119,6 +123,7 @@ class Salle{
         return $this->id;
     }
 }
+//instance
 $stringTest = "du texte, nom, prenom, libelle, predateur etc...";
 $booltest=false;
 $user1=new Utilisateur($stringTest,$stringTest);
@@ -208,13 +213,11 @@ class Dvd extends Document {
         return $this->bonus;
     }
 }
-
+//instances
 $cd1 = new Cd("Auteur CD 1", "Titre CD 1", "RefCD1", 45, nbPlages: 15);
 $cd2 = new Cd("Auteur CD 2", "Titre CD 2", "RefCD2", 45, nbPlages: 15);
-
 $livre1 = new Livre("Auteur1", "Titre1", "RefLivre1", 300);
 $livre2 = new Livre("Auteur2", "Titre2", "RefLivre2", 150);
-
 $dvd1 = new Dvd("Auteur1", "Titre1", "RefDVD1", 120, "bonus1");
 $dvd2 = new Dvd("Auteur2", "Titre2", "RefDVD2", 90, "bonus2");
 
